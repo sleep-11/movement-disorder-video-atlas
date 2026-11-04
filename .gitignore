@@ -1,0 +1,7 @@
+node_modules/
+.qa/
+__pycache__/
+*.pyc
+*.log
+docs/superpowers/
+*.partial.mp4
