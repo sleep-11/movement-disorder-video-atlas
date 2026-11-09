@@ -50,6 +50,27 @@ button { color: inherit; }
 
 .site-header { animation: rise-in .7s ease-out both; }
 
+.collection-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.collection-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 9px 20px;
+  border: 1px solid transparent;
+  color: var(--ink-soft);
+  font-size: 15px;
+  text-decoration: none;
+}
+.collection-nav a:hover { color: var(--teal-dark); background: var(--paper-deep); }
+.collection-nav a[aria-current="page"] { color: var(--paper); background: var(--teal-dark); border-color: var(--teal-dark); }
+
 .eyebrow {
   display: flex;
   align-items: center;
@@ -349,3 +370,9 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
+
+.video-list.video-list-flat { margin: 10px 0 0; }
+.video-list-flat .video-entry { min-height: 54px; align-items: center; border-bottom: 1px solid var(--line); }
+.video-list-flat .video-duration { align-self: center; }
+
+.dsa-page .player-frame { aspect-ratio: auto; height: min(62svh, 640px); min-height: 240px; }

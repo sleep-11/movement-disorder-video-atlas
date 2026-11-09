@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f4ee">
+    <meta name="description" content="脑血管 DSA 视频，选择条目即可在线播放。">
+    <title>脑血管 DSA · 临床视频资料</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css?v=20261109">
+    <script defer src="dsa-library.js"></script>
+    <script defer src="app.js?v=20261109"></script>
+  </head>
+  <body class="dsa-page">
+    <div class="site-shell">
+      <header class="site-header">
+        <nav class="collection-nav" aria-label="视频专题">
+          <a href="./">症状学</a>
+          <a href="dsa.html" aria-current="page">脑血管 DSA</a>
+        </nav>
+        <div class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span>脑血管造影影像 <span class="eyebrow-en">CEREBRAL ANGIOGRAPHY</span></div>
+        <div class="masthead-row">
+          <div>
+            <h1>脑血管 DSA</h1>
+            <p class="masthead-subtitle">Cerebral Angiography <em>Video Atlas</em></p>
+          </div>
+          <div class="header-note" aria-label="网站说明">
+            <span class="note-line"></span>
+            <p>脑血管 DSA 视频资料<br><span>For study and reference</span></p>
+          </div>
+        </div>
+        <div class="header-rule" aria-hidden="true"></div>
+      </header>
+
+      <main class="atlas-layout">
+        <section class="player-panel" id="player-panel" aria-labelledby="player-heading">
+          <div class="section-kicker"><span>观看区</span><span class="kicker-line" aria-hidden="true"></span><span>VIDEO VIEWER</span></div>
+          <div class="player-frame" id="player-frame">
+            <video id="video-player" controls playsinline preload="none" aria-label="视频播放器"></video>
+            <div class="player-idle" id="player-idle">
+              <div class="idle-glyph" aria-hidden="true"><span></span><span></span><span></span></div>
+              <p class="idle-label">选择一段视频开始</p>
+              <p class="idle-caption">Choose an entry from the directory</p>
+              <button class="primary-button" id="play-first" type="button">播放第一段 <span aria-hidden="true">↗</span></button>
+            </div>
+            <div class="player-loading" id="player-loading" aria-hidden="true"><span class="spinner" aria-hidden="true"></span><span>正在载入视频…</span></div>
+          </div>
+          <div class="player-caption" aria-live="polite">
+            <div class="player-caption-main">
+              <p class="current-chapter" id="current-chapter">脑血管 DSA</p>
+              <h2 id="player-heading">等待选择视频</h2>
+              <p class="player-original" id="player-original">Choose a video from the directory to begin.</p>
+            </div>
+            <p class="player-status" id="player-status" role="status">视频内容将在选择后加载</p>
+          </div>
+        </section>
+
+        <aside class="directory-panel" aria-labelledby="directory-heading">
+          <div class="directory-topline">
+            <div>
+              <div class="section-kicker"><span>视频目录</span><span class="kicker-line" aria-hidden="true"></span><span>DIRECTORY</span></div>
+              <h2 id="directory-heading">选择视频</h2>
+            </div>
+            <div class="directory-stats" id="directory-stats" aria-label="视频统计"></div>
+          </div>
+          <p class="directory-intro">选择视频即可播放，支持拖动进度与全屏观看。</p>
+          <nav class="chapter-directory" id="chapter-directory" aria-label="脑血管 DSA 视频目录">
+            <p class="directory-fallback" id="directory-fallback">目录正在准备…</p>
+          </nav>
+          <div class="directory-footer"><span class="brass-dot" aria-hidden="true"></span><span>open study archive</span></div>
+        </aside>
+      </main>
+
+      <footer class="site-footer">
+        <span>脑血管 DSA</span><span class="footer-separator" aria-hidden="true">/</span><span>Cerebral Angiography Video Atlas</span>
+      </footer>
+    </div>
+  </body>
+</html>

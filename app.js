@@ -42,6 +42,7 @@
 
   function chapterLabel(chapter) {
     if (!chapter) return "";
+    if (library.directoryMode === "flat") return text(chapter.title);
     var number = chapter.number === null || chapter.number === undefined ? "补充" : "第 " + chapter.number + " 章";
     return number + " · " + text(chapter.title);
   }
@@ -55,7 +56,7 @@
     var strong = document.createElement("strong");
     strong.textContent = Number.isFinite(total) ? String(total).padStart(2, "0") : "—";
     var label = document.createElement("span");
-    label.textContent = chapters + " chapters · " + duration;
+    label.textContent = library.directoryMode === "flat" ? "段视频 · " + duration : chapters + " chapters · " + duration;
     refs.stats.replaceChildren(strong, label);
   }
 
@@ -126,8 +127,13 @@
         list.appendChild(item);
         if (!firstVideo) firstVideo = { video: video, chapter: chapter, button: button };
       });
-      details.appendChild(list);
-      refs.directory.appendChild(details);
+      if (library.directoryMode === "flat") {
+        list.classList.add("video-list-flat");
+        refs.directory.appendChild(list);
+      } else {
+        details.appendChild(list);
+        refs.directory.appendChild(details);
+      }
     });
     if (!firstVideo) {
       var empty = document.createElement("p");
