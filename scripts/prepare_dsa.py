@@ -43,7 +43,7 @@ def main():
     }
     (ROOT / 'dsa-library.js').write_text(
         'window.VIDEO_LIBRARY = ' + json.dumps(catalog, ensure_ascii=False, indent=2) + ';\n',
-        encoding='utf-8',
+        encoding='utf-8', newline='\n',
     )
     (ROOT / '.qa').mkdir(exist_ok=True)
     (ROOT / '.qa' / 'dsa-media-report.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
